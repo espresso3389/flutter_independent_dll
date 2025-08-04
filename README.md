@@ -1,16 +1,10 @@
-# simple_exe
+# flutter_independent_dll
 
-A new Flutter project.
+This project is trying to separate Flutter functionality to a simple DLL and use it in a simple wrapper program without much hassle.
 
-## Getting Started
+## Windows
 
-This project is a starting point for a Flutter application.
+[windows/runner/CMakeLists.txt](windows/runner/CMakeLists.txt) is modified to:
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- build a simple executable ([windows/runner/simple_exe.cpp](windows/runner/simple_exe.cpp)) that only shows a blank window
+- build a DLL ([windows/runner/main.cpp](windows/runner/main.cpp)) that hosts all Flutter related functionality and export `InitFlutter` function only
